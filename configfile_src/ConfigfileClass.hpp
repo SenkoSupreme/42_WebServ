@@ -22,18 +22,21 @@
 class ConfigfileClass
 {
 private:
-   std::string		configFile;
+    std::string		configFile;
 	size_t			serverCount;
 	std::vector<std::string>	serverConf; //vector of servers
 
 public:
     ConfigfileClass(/* args */);
     ~ConfigfileClass();
-    ConfigfileClass( std::string const & ConfigfileClass );
+    ConfigfileClass( std::string const & conf );
 	ConfigfileClass( ConfigfileClass const &p );
-	ConfigfileClass & operator =( ConfigfileClass const & p);
+	ConfigfileClass & operator=( const ConfigfileClass & p);
 
-    //getters & setters here 
+    //getters & setters here
+    std::string getConfigfile();
+    size_t getServerCount();
+    //server_conf  
 
     //parse here ...
 

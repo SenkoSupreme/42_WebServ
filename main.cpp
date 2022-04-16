@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/configfile_src/ConfigfileClass.hpp"
+#include "configfile_src/ConfigfileClass.hpp"
 
 
 int main(int ac, char **av)
