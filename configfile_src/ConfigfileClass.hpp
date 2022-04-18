@@ -11,13 +11,7 @@
 /* ************************************************************************** */
 
 #pragma once
-# include <iostream>
-# include <string>
-# include <cstring>
-# include <fstream>
-# include <sstream>
-# include <vector>
-# include <algorithm>
+# include "../global_src/support_funcs.hpp"
 
 class ConfigfileClass
 {
