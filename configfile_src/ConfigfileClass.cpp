@@ -22,6 +22,7 @@ ConfigfileClass::~ConfigfileClass()
 
 ConfigfileClass::ConfigfileClass(std::string const & conf)
 {
+    this->configFile = conf;
 
 }
 
