@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   LocationConfig.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbrija <mbrija@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: mbrija <mbrija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 00:32:50 by mbrija            #+#    #+#             */
-/*   Updated: 2022/04/18 11:05:38 by mbrija           ###   ########.fr       */
+/*   Updated: 2022/04/19 02:02:08 by mbrija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,14 @@ private:
 public:
     LocationConfig(/* args */);
     LocationConfig(LocationConfig const & p);
-    LocationConfig operator= (LocationConfig const &p)
+    LocationConfig operator= (LocationConfig const &p);
     ~LocationConfig();
 
     //getters
+    std::string get_path();
+    std::string get_root();
+    std::string get_redirect();
+    std::string get_upload();
 
     //parse here
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ServerConfig.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbrija <mbrija@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: mbrija <mbrija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 00:29:22 by mbrija            #+#    #+#             */
-/*   Updated: 2022/04/18 11:28:53 by mbrija           ###   ########.fr       */
+/*   Updated: 2022/04/19 02:13:09 by mbrija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,14 @@ public:
     ~ServerConfig();
 
     //getters 
+    size_t get_port();
+    std::string get_name();
+    std::string get_root();
+    std::string get_redirect();
+    std::string get_index();
+    std::string get_log();
+    std::string get_error();
+    size_t get_body_size();
+    size_t get_location_count();
 };
 
