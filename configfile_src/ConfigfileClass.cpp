@@ -52,6 +52,11 @@ size_t ConfigfileClass::getServerCount()
     return this->serverCount;
 }
 
+std::vector<ServerConfig> ConfigfileClass::getServerConfig()
+{
+    return this->serverConf;
+}
+
 void ConfigfileClass::setServer()
 {
     std::ifstream   file(this->configFile);

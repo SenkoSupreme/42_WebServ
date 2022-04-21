@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ServerConfig.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbrija <mbrija@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: mbrija <mbrija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 00:29:56 by mbrija            #+#    #+#             */
-/*   Updated: 2022/04/21 16:17:23 by mbrija           ###   ########.fr       */
+/*   Updated: 2022/04/21 18:05:28 by mbrija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,8 @@ size_t ServerConfig::get_body_size()
 size_t ServerConfig::get_location_count()
 {
     return this->location_count;
+}
+std::vector<LocationConfig> ServerConfig::getLocation()
+{
+    return this->location;    
 }

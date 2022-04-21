@@ -6,7 +6,7 @@
 /*   By: mbrija <mbrija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 00:32:50 by mbrija            #+#    #+#             */
-/*   Updated: 2022/04/19 02:02:08 by mbrija           ###   ########.fr       */
+/*   Updated: 2022/04/21 17:58:34 by mbrija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ public:
     std::string get_root();
     std::string get_redirect();
     std::string get_upload();
+    std::vector<std::string> getMethods();
+    std::vector<std::string> getCgi();
 
     //parse here
 

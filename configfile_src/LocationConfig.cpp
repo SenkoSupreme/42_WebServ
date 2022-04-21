@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   LocationConfig.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbrija <mbrija@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: mbrija <mbrija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 00:33:32 by mbrija            #+#    #+#             */
-/*   Updated: 2022/04/21 16:22:20 by mbrija           ###   ########.fr       */
+/*   Updated: 2022/04/21 18:04:05 by mbrija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,13 @@ std::string LocationConfig::get_redirect()
 std::string LocationConfig::get_upload()
 {
     return this->upload;    
+}
+
+std::vector<std::string> LocationConfig::getMethods()
+{
+    return this->methods;
+}
+std::vector<std::string> LocationConfig::getCgi()
+{
+    return this->cgi;
 }

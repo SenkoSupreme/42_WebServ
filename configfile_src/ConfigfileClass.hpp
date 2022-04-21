@@ -31,6 +31,7 @@ public:
     //getters & setters here
     std::string getConfigfile();
     size_t getServerCount();
+    std::vector<ServerConfig> getServerConfig();
     //server_conf  
     
     void setServer();
