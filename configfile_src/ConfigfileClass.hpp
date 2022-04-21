@@ -12,13 +12,14 @@
 
 #pragma once
 # include "../global_src/support_funcs.hpp"
+# include "ServerConfig.hpp"
 
 class ConfigfileClass
 {
 private:
     std::string		configFile;
 	size_t			serverCount;
-	std::vector<std::string>	serverConf; //vector of servers
+	std::vector<ServerConfig>	serverConf; //vector of servers
 
 public:
     ConfigfileClass(/* args */);
@@ -31,6 +32,9 @@ public:
     std::string getConfigfile();
     size_t getServerCount();
     //server_conf  
+    
+    void setServer();
+    void setLocation();
 
     //parse here ...
 

@@ -3,17 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ServerConfig.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbrija <mbrija@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbrija <mbrija@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 00:29:56 by mbrija            #+#    #+#             */
-/*   Updated: 2022/04/19 02:16:02 by mbrija           ###   ########.fr       */
+/*   Updated: 2022/04/21 16:17:23 by mbrija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ServerConfig.hpp"
 
 
-ServerConfig::ServerConfig(/* args */)
+ServerConfig::ServerConfig(/* args */) :
+    port(-1), name(""), root(""),
+    index(""), redirect(""), body_size(100000000000),
+    location(0), location_count(0), log(""), error("")
 {
 }
 

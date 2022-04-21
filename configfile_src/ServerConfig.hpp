@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ServerConfig.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbrija <mbrija@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbrija <mbrija@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 00:29:22 by mbrija            #+#    #+#             */
-/*   Updated: 2022/04/19 02:13:09 by mbrija           ###   ########.fr       */
+/*   Updated: 2022/04/21 16:18:16 by mbrija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 # include "../global_src/support_funcs.hpp"
+# include "LocationConfig.hpp"
 
 class ServerConfig
 {
@@ -25,7 +26,7 @@ private:
     std::string error;
     size_t body_size;
     size_t location_count;
-    std::vector<int> location; // location type edit later
+    std::vector<LocationConfig> location; // location type edit later
     
     
 public:

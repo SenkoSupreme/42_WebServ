@@ -12,7 +12,7 @@
 
 #include "ConfigfileClass.hpp"
 
-ConfigfileClass::ConfigfileClass(/* args */)
+ConfigfileClass::ConfigfileClass(/* args */) : configFile("../config/conf"), serverCount(0), serverConf(0)
 {
 }
 
@@ -50,4 +50,21 @@ std::string ConfigfileClass::getConfigfile()
 size_t ConfigfileClass::getServerCount()
 {
     return this->serverCount;
+}
+
+void ConfigfileClass::setServer()
+{
+    std::ifstream   file(this->configFile);
+    std::string     buf;
+    size_t          n = 0;
+    
+    /* get line from file and trim buff*/
+    /*make the trim function, they don't have it ffs*/
+    /* check for server count and throw exception */
+    /*push to vector*/
+}
+
+void ConfigfileClass::setLocation()
+{
+    /*to do*/
 }

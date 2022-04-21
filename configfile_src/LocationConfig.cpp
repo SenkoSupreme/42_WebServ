@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   LocationConfig.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbrija <mbrija@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbrija <mbrija@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 00:33:32 by mbrija            #+#    #+#             */
-/*   Updated: 2022/04/19 02:07:49 by mbrija           ###   ########.fr       */
+/*   Updated: 2022/04/21 16:22:20 by mbrija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "LocationConfig.hpp"
 
-LocationConfig::LocationConfig(/* args */)
+LocationConfig::LocationConfig(/* args */) : 
+    path(""), root(""), auto_index(0), cgi(),
+    upload(""), redirect(""), methods()
 {
 }
 
