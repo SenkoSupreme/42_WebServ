@@ -19,4 +19,9 @@
 # include <vector>
 # include <map>
 # include <algorithm>
+# include <unistd.h>
+
+std::string ltrim(const std::string &str, const std::string set);
+std::string rtrim(const std::string &str, const std::string set);
+std::string trim(const std::string &str, const std::string set);
 

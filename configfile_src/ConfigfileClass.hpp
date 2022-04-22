@@ -16,6 +16,7 @@
 
 class ConfigfileClass
 {
+    
 private:
     std::string		configFile;
 	size_t			serverCount;
@@ -38,6 +39,7 @@ public:
     void setLocation();
 
     //parse here ...
+    void configfileparser();
 
     class Error_exc : public std::exception {
         private:
