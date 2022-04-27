@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   LocationConfig.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbrija <mbrija@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbrija <mbrija@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 00:33:32 by mbrija            #+#    #+#             */
-/*   Updated: 2022/04/21 18:04:05 by mbrija           ###   ########.fr       */
+/*   Updated: 2022/04/27 11:40:46 by mbrija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,42 @@ std::vector<std::string> LocationConfig::getMethods()
 std::vector<std::string> LocationConfig::getCgi()
 {
     return this->cgi;
+}
+
+void LocationConfig::locationParser(std::string buf)
+{
+    bool processed = false;
+    if(!buf.empty())
+    {
+        switch (buf[0])
+        {
+            case 'a' :
+                if (processed == false && std::strncmp("autoindex = ", buf.c_str(), 12) == 0)
+                {
+                    if (std::strncmp("autoindex = on", buf.c_str(), 14 == 0))
+                        this->auto_index = 1;
+                    else if (std::strncmp("autoindex = off", buf.c_str(), 15 == 0))
+                        this->auto_index = 0;
+                    break;
+                }
+                throw Error_exc("syntax err : invalid autoindex");
+            case 'p' :
+                if(this->path.empty() && std::strncmp("path = ", buf.c_str(), 7) == 0)
+                {
+                    this->path = buf.substr(buf.find("path = ") + strlen("path = "));
+                    if (this->path[this->path.size() - 1] != '/')
+                        this->path += '/';
+                    break;
+                }
+                throw Error_exc("syntax err : invalid path");
+           // case 'r' // root / redirect 
+           // case 'u' upload
+           // case 'c' cgi
+           // case 'm' methods
+            default:
+                if (buf.empty())
+                    break;
+                throw Error_exc("syntax err : invalid location");
+        }
+    }
 }
