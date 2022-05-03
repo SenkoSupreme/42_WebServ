@@ -34,3 +34,25 @@ std::string trim(const std::string &str, const std::string set)
 {
     return rtrim(ltrim(str, set), set);
 }
+
+std::vector<std::string> split(std::string str, char sep)
+{
+    std::vector<std::string> splitted;
+    std::string subed  = "";
+    size_t start = 0;
+    size_t end = 0;
+    size_t i = 0;
+
+    while (i <= str.length())
+    {
+        if (str[i] == sep || i == str.length())
+        {
+            end = i;
+            subed.append(str, start, end - start);
+            splitted.push_back(subed);
+            start = end + 1;
+        }
+        i++;
+    }
+    return splitted;
+}

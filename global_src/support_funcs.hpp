@@ -24,4 +24,4 @@
 std::string ltrim(const std::string &str, const std::string set);
 std::string rtrim(const std::string &str, const std::string set);
 std::string trim(const std::string &str, const std::string set);
-
+std::vector<std::string> split(std::string str, char sep);
