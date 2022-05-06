@@ -144,7 +144,8 @@ void ConfigfileClass::configfileparser()
         }
         else
         {
-            size_t n_locations;
+            size_t n_locations = 0;
+            bool is_port = false, is_bodysize = false;
 
             while (getline(file, buf))
             {
@@ -152,7 +153,29 @@ void ConfigfileClass::configfileparser()
                 if (buf == "}")
                     break;
                 /*now how to make this shit work*/
+                if (buf[0] == 'l')
+                {
+                    if (is_port = false && std::strncmp("listen = ", buf.c_str(), 9) == 0)
+                    {
+                        this->serverConf[n_servers].port = std::stoi(buf.substr(buf.find("listen = " + strlen("listen = "))));
+                        is_port = true;
+                    }
+                    else if (std::strncmp("location = [", buf.c_str(), 12) == 0)
+                    {
+                        while (getline(file, buf))
+                        {
+                            buf = trim(buf, " ");
+                            if (buf == "]")
+                                break;
+                            this->serverConf[n_servers].location[n_locations].locationParser(buf);
+                        }
+                        n_locations++;
+                    }
+                    else 
+                        throw Error_exc("Invalid Sytax : Location / port");
+
             }
+            else if (buf[0] == )
         }
     }
 }
