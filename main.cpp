@@ -11,22 +11,29 @@
 /* ************************************************************************** */
 
 #include "configfile_src/ConfigfileClass.hpp"
+#include "configfile_src/LocationConfig.hpp"
+#include "configfile_src/ServerConfig.hpp"
 
 
 int main(int ac, char **av)
 {
+    ConfigfileClass configFile;
+
     if (ac > 2)
     {
         std::cout << " bad parameters \n Usage: ./webserv configfile_path" << std::endl;
         return -1;
     }
-    if (ac < 2)
-    {
-
-    }
     if (ac == 2)
+        configFile = ConfigfileClass(std::string(av[1]));
+    try
     {
-        
+        configFile.configfileparser();
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Config File Invalid Syntax : " << e.what() << std::endl;
+        return -1;
     }
 
 }

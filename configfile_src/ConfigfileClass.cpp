@@ -175,7 +175,64 @@ void ConfigfileClass::configfileparser()
                         throw Error_exc("Invalid Sytax : Location / port");
 
             }
-            else if (buf[0] == )
+
+            else if (buf[0] == 'a')
+            {
+                if (this->serverConf[n_servers].log.empty() && std::strncmp("access_log = ", buf.c_str(), 13) == 0)
+                    this->serverConf[n_servers].log = buf.substr(buf.find("access_log = ") + strlen("access)log = "));
+                else
+                    throw  Error_exc("Inavalid Syntax : log");
+            }
+
+            else if (buf[0] == 'b')
+            {
+                if (is_bodysize == false && std::strncmp("body_size_limit = ", buf.c_str(), 18) == 0)
+                {
+                    this->serverConf[n_servers].body_size = std::stoul(buf.substr(buf.find("body_size_limit = ") + strlen("body_size_limit = "))) * 1048576;
+                    if (this->serverConf[n_servers].body_size < 0)
+                        throw Error_exc("body_size limit can't be negative");
+                }
+                else
+                    throw Error_exc("Invalid Syntax : BodySizeLimit");
+            }
+
+            else if (buf[0] == 'e')
+            {
+                if (this->serverConf[n_servers].error.empty() && std::strncmp("error_page = ", buf.c_str(), 13) == 0)
+                    this->serverConf[n_servers].error = buf.substr(buf.find("error_page = ") + strlen("error_page = "));
+                else
+                      throw Error_exc("Invalid Syntax : Error page");        
+            }
+
+            else if (buf[0] == 's')
+            {
+                if (this->serverConf[n_servers].name.empty() && std::strncmp("server_name = ", buf.c_str(), 14) == 0)
+                    this->serverConf[n_servers].name = buf.substr(buf.find("server_name = ") + strlen("server_name = "));
+                else 
+                      throw Error_exc("Invalid Syntax : server name");
+            }
+
+            else if (buf[0] == 'r')
+            {
+                if (this->serverConf[n_servers].root.empty() && std::strncmp("root = ", buf.c_str(), 7) == 0)
+                    this->serverConf[n_servers].root = buf.substr(buf.find("root = ") + strlen("root = "));
+                else if (this->serverConf[n_servers].redirect.empty() && std::strncmp("redirect = ", buf.c_str(), 11) == 0)
+                    this->serverConf[n_servers].redirect = buf.substr(buf.find("redirect = ") + strlen("redirect = "));
+                else 
+                      throw Error_exc("Invalid Syntax : Root / Redirect");
+            }
+
+            else if (buf[0] == 'i')
+            {
+                if (this->serverConf[n_servers].index.empty() && std::strncmp("index = ", buf.c_str(), 8) == 0)
+                    this->serverConf[n_servers].index = buf.substr(buf.find("index = ") + strlen("index = "));
+                else
+                      throw Error_exc("Invalid Syntax : index");        
+            }
+
+            else
+                throw Error_exc("Invalid Syntax : Config File");
         }
+        n_servers++;
     }
 }
